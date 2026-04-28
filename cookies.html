@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Yugen Flora Workshop | Cookies Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef8f0;
+            color: #1a3a1a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Green & Red Theme (consistent with contact & privacy pages) */
+        :root {
+            --green-dark: #1e4a1e;
+            --green-medium: #2d6a2d;
+            --green-light: #d0e6d0;
+            --red-bright: #c23b22;
+            --red-deep: #9e2a1c;
+            --red-soft: #fbe9e7;
+            --cream: #fef8f0;
+            --white: #ffffff;
+            --black: #1e1e1e;
+        }
+
+        /* Header & Navigation - matching main site */
+        header {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: var(--red-bright);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffb4a2;
+        }
+
+        /* Hero with cookie / botanical motif */
+        .cookie-hero {
+            background: linear-gradient(rgba(30,74,30,0.75), rgba(194,59,34,0.55)), url('https://images.unsplash.com/photo-1528901166007-3784c7dd3653?w=1600');
+            background-size: cover;
+            background-position: center 35%;
+            padding: 3rem 5%;
+            text-align: center;
+            color: white;
+        }
+        .cookie-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .cookie-hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Content container */
+        .cookies-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 5%;
+        }
+
+        .cookies-card {
+            background: var(--white);
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .cookies-card h2 {
+            font-size: 1.8rem;
+            color: var(--green-dark);
+            margin: 1.5rem 0 0.8rem 0;
+            border-left: 5px solid var(--red-bright);
+            padding-left: 1rem;
+        }
+        .cookies-card h2:first-of-type {
+            margin-top: 0;
+        }
+        .cookies-card h3 {
+            font-size: 1.3rem;
+            color: var(--green-medium);
+            margin: 1.2rem 0 0.5rem 0;
+            font-weight: 600;
+        }
+        .cookies-card p {
+            margin-bottom: 1rem;
+            color: #2b3b2b;
+        }
+        .cookies-card ul, .cookies-card ol {
+            margin: 0.8rem 0 1.2rem 2rem;
+        }
+        .cookies-card li {
+            margin: 0.5rem 0;
+        }
+        .cookies-card a {
+            color: var(--red-bright);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--red-bright);
+        }
+        .cookies-card a:hover {
+            color: var(--green-dark);
+            border-bottom-color: var(--green-dark);
+        }
+        .badge-cookie {
+            background: var(--green-light);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            margin-bottom: 1rem;
+        }
+        .last-updated {
+            font-style: italic;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5d9cb;
+            font-size: 0.85rem;
+            color: #5c6e5c;
+        }
+        .highlight-red {
+            color: var(--red-bright);
+            font-weight: 600;
+        }
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #fefaf5;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .cookie-table th, .cookie-table td {
+            border: 1px solid #e2d9ce;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .cookie-table th {
+            background-color: #e6f0e6;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+        .cookie-table td {
+            background-color: #ffffff;
+        }
+        .btn-cookie-pref {
+            display: inline-block;
+            background: var(--green-dark);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+        .btn-cookie-pref:hover {
+            background: var(--red-bright);
+            transform: translateY(-2px);
+        }
+        .consent-banner-sim {
+            background: var(--red-soft);
+            border-left: 6px solid var(--red-bright);
+            padding: 1rem 1.5rem;
+            border-radius: 28px;
+            margin: 1.5rem 0;
+        }
+        /* Footer consistency */
+        .footer-contact {
+            background: var(--green-dark);
+            color: white;
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffb4a2;
+        }
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--red-bright);
+        }
+        .copyright {
+            background: var(--green-dark);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #3a6b3a;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .cookie-hero h1 {
+                font-size: 2.2rem;
+            }
+            .cookies-card {
+                padding: 1.5rem;
+            }
+            .cookies-card h2 {
+                font-size: 1.5rem;
+            }
+            .cookie-table th, .cookie-table td {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Yugen <span>Flora</span> Workshop</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="cookie-hero">
+        <h1>Cookies & Digital Petals</h1>
+        <p>Small data tokens that help our garden thrive — we use them responsibly, with clarity and care.</p>
+    </div>
+
+    <div class="cookies-container">
+        <div class="cookies-card">
+            <div class="badge-cookie"><i class="fas fa-cookie-bite"></i> Last revised: April 2025</div>
+            <h2>🍪 Our gentle use of cookies</h2>
+            <p>Just as a garden benefits from subtle seasonal cues, our website uses cookies and similar tracking technologies to enhance your experience, remember your preferences, and understand how visitors explore our botanical world. This Cookies Policy explains what cookies are, which ones we use, and how you can manage them. At Yugen Flora Workshop, transparency blooms naturally.</p>
+
+            <h2>1. What are cookies?</h2>
+            <p>Cookies are tiny text files stored on your device (computer, tablet, or mobile) when you visit a website. They help the website recognize your device over time, retain certain settings, and collect anonymous usage data. We also use <strong>local storage</strong> and similar technologies for functional purposes. No cookie should ever contain personal information unless you have voluntarily provided it (e.g., by filling out a form).</p>
+
+            <h2>2. Types of cookies we use</h2>
+            <p>We only deploy cookies that are essential, functional, or analytical — never intrusive or for unsolicited advertising. Below is a transparent breakdown:</p>
+            
+            <table class="cookie-table">
+                <thead>
+                    <tr><th>Cookie Category</th><th>Purpose</th><th>Duration</th><th>Examples</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="highlight-red">Strictly Necessary</span></td><td>Ensure core functionality: navigation, security, form submissions, and cookie consent memory. Without these, the site would not perform properly.</td><td>Session / Persistent (max 1 year)</td><td>session_id, csrf_token, cookie_preferences_set</td></tr>
+                    <tr><td><span class="highlight-red">Functional / Preference</span></td><td>Remember your choices like language, region, or whether you've dismissed the workshop notification banner.</td><td>Up to 12 months</td><td>language_pref, hide_workshop_popup</td></tr>
+                    <tr><td><span class="highlight-red">Analytical (Performance)</span></td><td>Collect anonymized data about visitor behavior (pages visited, time spent, referral sources) to improve our digital presence. We use first-party analytics; no cross-site tracking.</td><td>Persistent (up to 14 months)</td><td>_ga, _gid (anonymized with IP masking)</td></tr>
+                </tbody>
+            </table>
+            <p>We do <strong>not</strong> use advertising cookies, tracking pixels from third-party networks, or any cookies for behavioral profiling across different websites.</p>
+
+            <h2>3. How we obtain your consent</h2>
+            <p>When you first visit our website, a subtle cookie banner appears, allowing you to accept or manage non-essential cookies. By continuing to browse after clicking "Accept Functional & Analytics" or adjusting your preferences, you grant us permission to place the selected cookies. You may change your mind at any time using the <strong>“Cookie Preferences”</strong> button below or your browser settings. Essential cookies are always active to guarantee a secure experience.</p>
+            
+            <div class="consent-banner-sim">
+                <i class="fas fa-hand-peace" style="font-size: 1.5rem; margin-right: 10px; color: var(--red-bright);"></i>
+                <strong>Your choice matters.</strong> We respect your autonomy. You can disable non-essential cookies via the button below. However, disabling analytics cookies may prevent us from improving our services.
+            </div>
+
+            <div style="text-align: center; margin: 1rem 0;">
+                <button id="openCookiePrefBtn" class="btn-cookie-pref"><i class="fas fa-sliders-h"></i> Customize your cookie preferences</button>
+            </div>
+
+            <h2>4. Third-party services & embedded content</h2>
+            <p>Occasionally we embed content from trusted partners (e.g., a calendly link for workshop booking, or Instagram posts). These third-party services may set their own cookies if you interact with them. We do not control those cookies, and we encourage you to review their respective policies. However, we only integrate partners committed to privacy and we never share your personal data without explicit consent.</p>
+
+            <h2>5. Managing & deleting cookies</h2>
+            <p>You have full control. Here are the ways to manage cookies on our website and beyond:</p>
+            <ul>
+                <li>🔧 <strong>Browser settings:</strong> Most browsers allow you to block or delete all cookies, including essential ones (though this may break certain website features). Check your browser's help section for instructions.</li>
+                <li>🍪 <strong>Our preference center:</strong> Click the "Customize your cookie preferences" button above or below — it will open an interactive panel where you can toggle analytics and functional cookies on/off.</li>
+                <li>⚙️ <strong>Global privacy controls:</strong> If your browser sends a Global Privacy Control (GPC) signal, we will automatically respect it and disable non-essential cookies.</li>
+            </ul>
+            <p>To disable Google Analytics tracking specifically, you can also install the official Google Analytics Opt-out Browser Add-on.</p>
+
+            <h2>6. Cookies & personal data</h2>
+            <p>Our cookies do not directly store sensitive personal information (like your name or address). However, some identifiers (e.g., session ID) might be linked to your account if you are logged into our workshop portal. In that case, the same privacy protections described in our <a href="privacy.html">Privacy Policy</a> apply. We never use cookies to build profiling for marketing outside Yugen Flora Workshop.</p>
+
+            <h2>7. Updates to this cookies policy</h2>
+            <p>As our digital garden evolves, we may revisit this policy to reflect new technologies or regulations. Any changes will be posted on this page with an updated revision date. If we make a material change that affects cookie functionality or consent, we will notify you via a website banner.</p>
+
+            <div class="last-updated">
+                <i class="fas fa-leaf"></i> This Cookies Policy was last updated on April 24, 2025. Coincides with our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>. If you have further questions about our use of cookies, please email <strong>privacy@yugenflora.com</strong> or call +1 (503) 555-8924.
+            </div>
+        </div>
+
+        <!-- extra info: how to reach data steward -->
+        <div style="margin-top: 2rem; background: #eef4ea; border-radius: 28px; padding: 1.5rem; text-align: center; border: 1px solid #caddc1;">
+            <i class="fas fa-seedling" style="font-size: 2rem; color: var(--green-medium);"></i>
+            <h3 style="color: var(--green-dark); margin: 0.5rem 0;">Small bites, big respect</h3>
+            <p style="max-width: 700px; margin: 0 auto;">Cookies help us understand which flowers (or pages) you love most — but we never crumble your privacy. Feel free to manage your settings anytime.</p>
+            <p style="margin-top: 0.8rem;"><i class="fas fa-envelope-open-text"></i> Prefer no cookies at all? Use the preference manager to disable all non-essentials. Essential cookies remain minimal.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <div>
+            <h4><i class="fas fa-map-marker-alt"></i> Visit Us</h4>
+            <p>Yugen Flora Workshop</p>
+            <p>47 Serenity Lane, Green Valley<br>Portland, OR 97214</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-phone-alt"></i> Call & Grow</h4>
+            <p>+1 (503) 555-8924</p>
+            <p>hello@yugenflora.com</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-clock"></i> Garden Hours</h4>
+            <p>Wed–Sun: 10am – 6pm</p>
+            <p>Workshops by appointment</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Yugen Flora Workshop — Cultivating green tranquility with red passion. All images lovingly curated.</p>
+    </div>
+</footer>
+
+<!-- Cookie Preference Manager - interactive & fully respectful, stores preferences in localStorage -->
+<script>
+    (function() {
+        // Preference keys
+        const ANALYTICS_KEY = 'yugen_cookie_analytics';
+        const FUNCTIONAL_KEY = 'yugen_cookie_functional';
+        const PREF_SET_KEY = 'yugen_cookie_preferences_set';
+
+        // Helper to load initial preferences (default: both true for analytics & functional; but user can disable)
+        let analyticsEnabled = true;
+        let functionalEnabled = true;
+
+        function loadPreferences() {
+            const savedPrefs = localStorage.getItem(PREF_SET_KEY);
+            if (savedPrefs === 'true') {
+                const analyticsVal = localStorage.getItem(ANALYTICS_KEY);
+                const functionalVal = localStorage.getItem(FUNCTIONAL_KEY);
+                analyticsEnabled = analyticsVal !== null ? (analyticsVal === 'true') : true;
+                functionalEnabled = functionalVal !== null ? (functionalVal === 'true') : true;
+            } else {
+                // default: both enabled
+                analyticsEnabled = true;
+                functionalEnabled = true;
+            }
+        }
+
+        function savePreferences(analytics, functional) {
+            localStorage.setItem(ANALYTICS_KEY, analytics.toString());
+            localStorage.setItem(FUNCTIONAL_KEY, functional.toString());
+            localStorage.setItem(PREF_SET_KEY, 'true');
+            analyticsEnabled = analytics;
+            functionalEnabled = functional;
+            // In a real environment we would enable/disable actual analytics scripts (like gtag).
+            // For demonstration we simulate by toggling data attributes or updating a hidden flag.
+            // For ethical transparency, we'll reflect the status in console and adjust any external scripts if they existed.
+            console.log(`[Yugen Flora] Cookie preferences saved: Analytics=${analytics}, Functional=${functional}`);
+            // Dynamically apply effect: for demo, if analytics disabled, we inform no GA calls.
+            if (!analyticsEnabled) {
+                console.log("Analytics cookies are disabled. No tracking data will be sent.");
+                // Optionally remove any existing Google Analytics if present (but we don't embed actual GA to respect privacy)
+                // Just a simulated user-friendly note.
+            } else {
+                console.log("Analytics cookies are enabled (anonymized).");
+            }
+            // For functional cookies we could adjust UI but no heavy changes needed.
+        }
+
+        function showPreferenceModal() {
+            // Create a modal dialog overlay
+            const modalDiv = document.createElement('div');
+            modalDiv.id = 'cookiePrefModal';
+            modalDiv.style.position = 'fixed';
+            modalDiv.style.top = '0';
+            modalDiv.style.left = '0';
+            modalDiv.style.width = '100%';
+            modalDiv.style.height = '100%';
+            modalDiv.style.backgroundColor = 'rgba(0,0,0,0.5)';
+            modalDiv.style.display = 'flex';
+            modalDiv.style.alignItems = 'center';
+            modalDiv.style.justifyContent = 'center';
+            modalDiv.style.zIndex = '10000';
+            modalDiv.style.backdropFilter = 'blur(3px)';
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.backgroundColor = 'white';
+            modalContent.style.maxWidth = '500px';
+            modalContent.style.width = '90%';
+            modalContent.style.borderRadius = '32px';
+            modalContent.style.padding = '2rem';
+            modalContent.style.boxShadow = '0 25px 40px rgba(0,0,0,0.2)';
+            modalContent.style.fontFamily = "'Inter', sans-serif";
+            modalContent.innerHTML = `
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--green-dark); margin-top: 0;">🍪 Cookie preferences</h3>
+                <p>Select which cookies you allow, besides strictly necessary ones.</p>
+                <div style="margin: 1.5rem 0;">
+                    <label style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; cursor: pointer;">
+                        <input type="checkbox" id="prefAnalytics" ${analyticsEnabled ? 'checked' : ''} style="width: 18px; height: 18px;">
+                        <div><strong>Analytics cookies</strong><br><small style="color: #5a6e5a;">Anonymized usage data to improve our digital garden.</small></div>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                        <input type="checkbox" id="prefFunctional" ${functionalEnabled ? 'checked' : ''} style="width: 18px; height: 18px;">
+                        <div><strong>Functional/Preference cookies</strong><br><small style="color: #5a6e5a;">Remember your language, dismissed banners and settings.</small></div>
+                    </label>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 1.5rem;">
+                    <button id="modalSaveBtn" class="btn-cookie-pref" style="background: var(--green-dark); margin:0;">Save preferences</button>
+                    <button id="modalCloseBtn" style="background: #e2d4c8; border: none; padding: 10px 20px; border-radius: 40px; cursor: pointer;">Close</button>
+                </div>
+            `;
+            modalDiv.appendChild(modalContent);
+            document.body.appendChild(modalDiv);
+            
+            const saveBtn = modalContent.querySelector('#modalSaveBtn');
+            const closeBtn = modalContent.querySelector('#modalCloseBtn');
+            const analyticsCheck = modalContent.querySelector('#prefAnalytics');
+            const functionalCheck = modalContent.querySelector('#prefFunctional');
+            
+            saveBtn.addEventListener('click', () => {
+                const newAnalytics = analyticsCheck.checked;
+                const newFunctional = functionalCheck.checked;
+                savePreferences(newAnalytics, newFunctional);
+                document.body.removeChild(modalDiv);
+                showToastNotification("Preferences saved! Your cookie choices are now active.");
+            });
+            closeBtn.addEventListener('click', () => {
+                document.body.removeChild(modalDiv);
+            });
+        }
+
+        function showToastNotification(message) {
+            const toast = document.createElement('div');
+            toast.innerText = message;
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = '#1e4a1e';
+            toast.style.color = 'white';
+            toast.style.padding = '12px 24px';
+            toast.style.borderRadius = '60px';
+            toast.style.fontWeight = '500';
+            toast.style.zIndex = '10001';
+            toast.style.fontFamily = "'Inter', sans-serif";
+            toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => { if(toast.parentNode) toast.parentNode.removeChild(toast); }, 300);
+            }, 2800);
+        }
+        
+        // Initialize loading preferences
+        loadPreferences();
+        
+        // Attach event to preference button
+        const prefBtn = document.getElementById('openCookiePrefBtn');
+        if (prefBtn) {
+            prefBtn.addEventListener('click', showPreferenceModal);
+        }
+        
+        // Optional: if user had previously set preferences, inform console (simulate no extra scripts)
+        // For maximum compliance, we also simulate reading GPC signal: 
+        if (navigator.globalPrivacyControl === true) {
+            console.log("GPC signal detected: disabling non-essential cookies by default.");
+            savePreferences(false, false);
+        }
+        
+        // For any internal link that references 'cookies.html' make sure it stays proper.
+        const allLinks = document.querySelectorAll('a');
+        allLinks.forEach(link => {
+            if(link.getAttribute('href') === 'cookies.html' || link.getAttribute('href') === '#') {
+                // nothing special, just consistency
+            }
+            if(link.href && link.href.includes('mailto:')) {
+                link.setAttribute('target', '_self');
+            }
+        });
+    })();
+</script>
+</body>
+</html>

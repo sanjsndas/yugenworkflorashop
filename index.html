@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugen Flora Workshop | Green & Red Gardening</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef8f0;
+            color: #1a3a1a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Green & Red Theme */
+        :root {
+            --green-dark: #1e4a1e;
+            --green-medium: #2d6a2d;
+            --green-light: #d0e6d0;
+            --red-bright: #c23b22;
+            --red-deep: #9e2a1c;
+            --red-soft: #fbe9e7;
+            --cream: #fef8f0;
+            --white: #ffffff;
+            --black: #1e1e1e;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: var(--red-bright);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffb4a2;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30,74,30,0.85), rgba(194,59,34,0.7)), url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1600');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--red-bright);
+            padding: 0.9rem 2rem;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .btn:hover {
+            background: var(--red-deep);
+            transform: scale(1.03);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: var(--green-dark);
+            border-color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--green-dark);
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--red-bright);
+            margin: 0.8rem auto 0;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card h3 {
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: #2c3e2c;
+        }
+
+        /* Gardening Tips (Green/Red Highlights) */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
+        }
+        .tip-item {
+            background: var(--green-light);
+            padding: 1.5rem;
+            border-left: 6px solid var(--red-bright);
+            border-radius: 12px;
+        }
+        .tip-item i {
+            color: var(--red-bright);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* About / Address */
+        .footer-contact {
+            background: var(--green-dark);
+            color: white;
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffb4a2;
+        }
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--red-bright);
+        }
+        .copyright {
+            background: var(--green-dark);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #3a6b3a;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Yugen <span>Flora</span> Workshop</div>
+        <ul class="nav-links">
+               <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Where Green Meets Crimson</h1>
+            <p>Inspired gardens, mindful cultivation — Yugen Flora Workshop blends Japanese aesthetics with vibrant red accents.</p>
+            <a href="#" class="btn">Explore Gardens</a>
+            <a href="#" class="btn btn-outline">Join Workshop</a>
+        </div>
+    </section>
+
+    <section id="philosophy">
+        <div class="section-title">Our Gardening Philosophy</div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="font-size:1.2rem">We believe gardening is a dialogue between human intention and nature's wild beauty. Our green & red theme celebrates life (green) and passion (red) — from emerald ferns to crimson maples, from basil to begonias. Every leaf, every petal tells a story.</p>
+        </div>
+    </section>
+
+    <section id="featured" style="background: var(--red-soft);">
+        <div class="section-title">Featured Garden Designs</div>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600" alt="Zen garden with red maple">
+                <div class="card-content">
+                    <h3>Crimson Maple Zen Garden</h3>
+                    <p>Red Japanese maples contrast with mossy greens. A meditative space inspired by Kyoto.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600" alt="Edible garden">
+                <div class="card-content">
+                    <h3>Edible Red & Green</h3>
+                    <p>Red chard, tomatoes, basil, and lettuce — beauty on your plate.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=600" alt="Flower border">
+                <div class="card-content">
+                    <h3>Perennial Border with Heuchera</h3>
+                    <p>Red-leaved heuchera, green ferns, and white blooms for drama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips">
+        <div class="section-title">Essential Gardening Wisdom</div>
+        <div class="tips-grid">
+            <div class="tip-item"><i class="fas fa-seedling"></i><h3>Soil First</h3><p>Rich, loamy soil with compost feeds your green friends. Red wigglers are a bonus!</p></div>
+            <div class="tip-item"><i class="fas fa-tint"></i><h3>Water Deeply</h3><p>Infrequent deep watering beats daily sprinkles — encourages deep roots.</p></div>
+            <div class="tip-item"><i class="fas fa-sun"></i><h3>Observe Light</h3><p>Red-leaved plants need more sun to maintain color. Green plants vary.</p></div>
+            <div class="tip-item"><i class="fas fa-hand-holding-heart"></i><h3>Prune with Purpose</h3><p>Cut dead, diseased, or crossing branches. Late winter is prime time.</p></div>
+            <div class="tip-item"><i class="fas fa-bug"></i><h3>Natural Pest Control</h3><p>Nasturtiums (red/orange) and marigolds deter pests organically.</p></div>
+            <div class="tip-item"><i class="fas fa-calendar-alt"></i><h3>Seasonal Rhythm</h3><p>Plant cool greens (spinach, kale) in spring/fall. Red peppers love summer heat.</p></div>
+        </div>
+    </section>
+
+    <section id="workshops" style="background: var(--green-light);">
+        <div class="section-title">Upcoming Workshops</div>
+        <div class="card-container">
+            <div class="card"><img src="https://images.unsplash.com/photo-1592155931584-901ac15763e3?w=600" alt="Workshop"><div class="card-content"><h3>Ikebana with Red Accents</h3><p>Japanese flower arranging using green foliage and red blooms. March 15.</p></div></div>
+            <div class="card"><img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=600" alt="Propagation"><div class="card-content"><h3>Propagation Masterclass</h3><p>Learn to multiply your plants — from cuttings to division. April 2.</p></div></div>
+            <div class="card"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600" alt="Garden design"><div class="card-content"><h3>Designing with Contrast</h3><p>Master green/red color theory in your garden beds. May 10.</p></div></div>
+        </div>
+    </section>
+
+    <section id="plant-guide">
+        <div class="section-title">Top 10 Green & Red Plants</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1rem;">
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🌿 Japanese Maple</strong> – deep red foliage</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🍅 Red Cherry Tomato</strong> – edible jewel</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🌺 Red Hot Poker</strong> – dramatic spikes</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🌿 Basil 'Red Rubin'</strong> – purple-red leaves</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🍓 Alpine Strawberry</strong> – red fruits, green leaves</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🌹 Red Knockout Rose</strong> – everblooming</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🌿 Coleus 'Redhead'</strong> – bold red centers</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🌶️ Ornamental Pepper</strong> – red fruits</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🍃 Heuchera 'Fire Chief'</strong> – year-round red</div>
+            <div style="background:white; padding:1rem; border-radius:12px;"><strong>🌸 Red Camellia</strong> – winter bloom</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <div>
+            <h4><i class="fas fa-map-marker-alt"></i> Visit Us</h4>
+            <p>Yugen Flora Workshop</p>
+            <p>47 Serenity Lane, Green Valley<br>Portland, OR 97214</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-phone-alt"></i> Call & Grow</h4>
+            <p>+1 (503) 555-8924</p>
+            <p>hello@yugenflora.com</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-clock"></i> Garden Hours</h4>
+            <p>Wed–Sun: 10am – 6pm</p>
+            <p>Workshops by appointment</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Yugen Flora Workshop — Cultivating green tranquility with red passion. All images lovingly curated.</p>
+    </div>
+</footer>
+</body>
+</html>

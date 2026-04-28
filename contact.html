@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugen Flora Workshop | Contact & Cultivate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef8f0;
+            color: #1a3a1a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Green & Red Theme */
+        :root {
+            --green-dark: #1e4a1e;
+            --green-medium: #2d6a2d;
+            --green-light: #d0e6d0;
+            --red-bright: #c23b22;
+            --red-deep: #9e2a1c;
+            --red-soft: #fbe9e7;
+            --cream: #fef8f0;
+            --white: #ffffff;
+            --black: #1e1e1e;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: var(--red-bright);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffb4a2;
+        }
+
+        /* Hero Subpage */
+        .page-hero {
+            background: linear-gradient(rgba(30,74,30,0.7), rgba(194,59,34,0.6)), url('https://images.unsplash.com/photo-1592155931584-901ac15763e3?w=1600');
+            background-size: cover;
+            background-position: center 50%;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Contact main layout */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 3rem auto;
+            padding: 0 5%;
+        }
+        .contact-info {
+            flex: 1.2;
+            background: var(--white);
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .contact-form {
+            flex: 1.8;
+            background: var(--white);
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+        .info-card {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e9e0d0;
+            padding-bottom: 1.5rem;
+        }
+        .info-card i {
+            font-size: 1.8rem;
+            color: var(--red-bright);
+            margin-right: 1rem;
+            width: 40px;
+        }
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--green-dark);
+            display: inline-block;
+        }
+        .info-detail {
+            margin-top: 0.5rem;
+            padding-left: 3rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+        .social-links a {
+            background: var(--green-light);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green-dark);
+            font-size: 1.5rem;
+            transition: all 0.2s;
+        }
+        .social-links a:hover {
+            background: var(--red-bright);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.4rem;
+            color: var(--green-dark);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #ddd2c0;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            background: #fefaf5;
+            transition: 0.2s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--red-bright);
+            box-shadow: 0 0 0 3px rgba(194,59,34,0.2);
+        }
+        .btn-submit {
+            background: var(--green-dark);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .btn-submit:hover {
+            background: var(--red-bright);
+            transform: scale(1.02);
+        }
+        .note-text {
+            font-size: 0.8rem;
+            color: #5f6b5f;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* map placeholder */
+        .map-placeholder {
+            margin-top: 2rem;
+            background: #e5dbcf;
+            border-radius: 20px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green-dark);
+            font-weight: 500;
+            background-image: url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .map-placeholder .map-overlay {
+            background: rgba(30,74,30,0.7);
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            backdrop-filter: blur(2px);
+        }
+
+        /* footer identical */
+        .footer-contact {
+            background: var(--green-dark);
+            color: white;
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffb4a2;
+        }
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--red-bright);
+        }
+        .copyright {
+            background: var(--green-dark);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #3a6b3a;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Yugen <span>Flora</span> Workshop</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="page-hero">
+        <h1>Connect with Nature & Us</h1>
+        <p>Whether you have a gardening question, wish to join a workshop, or simply want to say hello — our green&red community awaits.</p>
+    </div>
+
+    <div class="contact-wrapper">
+        <!-- Left side: contact details & map -->
+        <div class="contact-info">
+            <div class="info-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Garden Studio</h3>
+                <div class="info-detail">
+                    <p><i class="fas fa-map-pin" style="width:20px; color:var(--red-bright);"></i> 47 Serenity Lane, Green Valley<br>Portland, OR 97214</p>
+                    <p><i class="fas fa-envelope"></i> hello@yugenflora.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +1 (503) 555-8924</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Open Hours</h3>
+                <div class="info-detail">
+                    <p><strong>Garden & Shop:</strong> Wed–Sun 10am – 6pm</p>
+                    <p><strong>Workshops & private consults:</strong> by appointment (Tue/Thu evenings)</p>
+                    <p><i class="fas fa-seedling"></i> Closed on major holidays – we rest with the soil.</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-hand-peace"></i>
+                <h3>Follow Roots & Red Blooms</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p style="margin-top: 1rem; font-size:0.9rem;">Tag us <strong>#YugenFlora</strong> — share your green-red garden moments.</p>
+            </div>
+            <!-- Mini map representation -->
+            <div class="map-placeholder">
+                <div class="map-overlay">
+                    <i class="fas fa-map-marker-alt"></i> 47 Serenity Lane, Portland — Japanese garden district
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side: inquiry form -->
+        <div class="contact-form">
+            <h2 style="font-family:'Playfair Display'; color: var(--green-dark); margin-bottom: 0.5rem;">Send a note</h2>
+            <p style="margin-bottom: 1.8rem; border-left: 3px solid var(--red-bright); padding-left: 0.8rem;">Ask about workshops, private garden coaching, or just share your plant story.</p>
+            <form id="contactForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="name"><i class="far fa-user"></i> Full name *</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g. Sage Greenfield">
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="far fa-envelope"></i> Email address *</label>
+                    <input type="email" id="email" name="email" required placeholder="hello@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="interest"><i class="fas fa-seedling"></i> I'm interested in... *</label>
+                    <select id="interest" name="interest" required>
+                        <option value="" disabled selected>– select one –</option>
+                        <option value="workshop">Upcoming workshop / ikebana class</option>
+                        <option value="consult">Private garden design consultation</option>
+                        <option value="shop">Plant & tool shop inquiry</option>
+                        <option value="collab">Collaboration / press</option>
+                        <option value="other">Other green thoughts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message"><i class="far fa-comment-dots"></i> Your message *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tell us about your garden dreams, questions about red maples, or workshop availability..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Cultivate connection</button>
+                <p class="note-text"><i class="fas fa-shield-alt"></i> We respect your privacy. Your details stay rooted with us — no spam, only seasonal garden notes.</p>
+            </form>
+            <div id="formFeedback" style="margin-top: 1.2rem; font-weight: 500;"></div>
+        </div>
+    </div>
+
+    <!-- extra FAQ / quick reach -->
+    <div style="background: var(--red-soft); margin: 1rem 5% 2rem 5%; border-radius: 32px; padding: 2rem; text-align: center;">
+        <i class="fas fa-phone-volume" style="font-size: 2rem; color: var(--red-bright); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <h3 style="color: var(--green-dark);">Prefer direct conversation?</h3>
+        <p style="max-width: 550px; margin: 0.5rem auto;">Call us at <strong>+1 (503) 555-8924</strong> during garden hours or leave a voicemail — we’ll call back within one business day with seasonal wisdom.</p>
+        <a href="#" style="display: inline-block; margin-top: 1rem; background: var(--green-dark); color: white; padding: 0.5rem 1.8rem; border-radius: 60px; text-decoration: none; font-weight: 500;">Request callback →</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <div>
+            <h4><i class="fas fa-map-marker-alt"></i> Visit Us</h4>
+            <p>Yugen Flora Workshop</p>
+            <p>47 Serenity Lane, Green Valley<br>Portland, OR 97214</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-phone-alt"></i> Call & Grow</h4>
+            <p>+1 (503) 555-8924</p>
+            <p>hello@yugenflora.com</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-clock"></i> Garden Hours</h4>
+            <p>Wed–Sun: 10am – 6pm</p>
+            <p>Workshops by appointment</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Yugen Flora Workshop — Cultivating green tranquility with red passion. All images lovingly curated.</p>
+    </div>
+</footer>
+
+<script>
+    // Simple client-side form handler with console & feedback (non-server but respectful)
+    const contactForm = document.getElementById('contactForm');
+    const feedbackDiv = document.getElementById('formFeedback');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // grab values for basic validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !interest || !message) {
+                feedbackDiv.innerHTML = '<span style="color:#c23b22;"><i class="fas fa-exclamation-circle"></i> Please fill all required fields (*) — we want to hear from you!</span>';
+                return;
+            }
+            if (!email.includes('@') || !email.includes('.')) {
+                feedbackDiv.innerHTML = '<span style="color:#c23b22;"><i class="fas fa-envelope-open-text"></i> Please enter a valid email address so we can reply.</span>';
+                return;
+            }
+
+            // simulate a beautiful success message (since backend not required for demo)
+            feedbackDiv.innerHTML = '<span style="color:#1e4a1e; background:#d0e6d0; padding:0.8rem; border-radius:2rem; display:inline-block;"><i class="fas fa-check-circle"></i> Thank you ' + escapeHtml(name) + '! Your message has been planted. We\'ll get back to you within 48 hours. <br> 🌿🌸</span>';
+            contactForm.reset();
+            setTimeout(() => {
+                feedbackDiv.innerHTML = '';
+            }, 6000);
+        });
+    }
+
+    // simple escape helper
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+</script>
+
+</body>
+</html>

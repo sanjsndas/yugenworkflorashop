@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Yugen Flora Workshop | Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef8f0;
+            color: #1a3a1a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Green & Red Theme (consistent with contact page) */
+        :root {
+            --green-dark: #1e4a1e;
+            --green-medium: #2d6a2d;
+            --green-light: #d0e6d0;
+            --red-bright: #c23b22;
+            --red-deep: #9e2a1c;
+            --red-soft: #fbe9e7;
+            --cream: #fef8f0;
+            --white: #ffffff;
+            --black: #1e1e1e;
+        }
+
+        /* Header & Navigation - identical to main site */
+        header {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: var(--red-bright);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffb4a2;
+        }
+
+        /* Page hero with pruning / leaf motif */
+        .policy-hero {
+            background: linear-gradient(rgba(30,74,30,0.75), rgba(194,59,34,0.55)), url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e0f3?w=1600');
+            background-size: cover;
+            background-position: center 40%;
+            padding: 3rem 5%;
+            text-align: center;
+            color: white;
+        }
+        .policy-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .policy-hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Privacy content container */
+        .privacy-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 5%;
+        }
+
+        .privacy-card {
+            background: var(--white);
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .privacy-card h2 {
+            font-size: 1.8rem;
+            color: var(--green-dark);
+            margin: 1.5rem 0 0.8rem 0;
+            border-left: 5px solid var(--red-bright);
+            padding-left: 1rem;
+        }
+        .privacy-card h2:first-of-type {
+            margin-top: 0;
+        }
+        .privacy-card h3 {
+            font-size: 1.3rem;
+            color: var(--green-medium);
+            margin: 1.2rem 0 0.5rem 0;
+            font-weight: 600;
+        }
+        .privacy-card p {
+            margin-bottom: 1rem;
+            color: #2b3b2b;
+        }
+        .privacy-card ul, .privacy-card ol {
+            margin: 0.8rem 0 1.2rem 2rem;
+        }
+        .privacy-card li {
+            margin: 0.5rem 0;
+        }
+        .privacy-card a {
+            color: var(--red-bright);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--red-bright);
+        }
+        .privacy-card a:hover {
+            color: var(--green-dark);
+            border-bottom-color: var(--green-dark);
+        }
+        .badge-privacy {
+            background: var(--green-light);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            margin-bottom: 1rem;
+        }
+        .last-updated {
+            font-style: italic;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5d9cb;
+            font-size: 0.85rem;
+            color: #5c6e5c;
+        }
+        .highlight-red {
+            color: var(--red-bright);
+            font-weight: 500;
+        }
+
+        /* Footer consistency with contact page */
+        .footer-contact {
+            background: var(--green-dark);
+            color: white;
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffb4a2;
+        }
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--red-bright);
+        }
+        .copyright {
+            background: var(--green-dark);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #3a6b3a;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .policy-hero h1 {
+                font-size: 2.2rem;
+            }
+            .privacy-card {
+                padding: 1.5rem;
+            }
+            .privacy-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Yugen <span>Flora</span> Workshop</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="policy-hero">
+        <h1>Privacy & Mindfulness</h1>
+        <p>Your personal information is like a rare seed — we protect it with the same care we give our gardens.</p>
+    </div>
+
+    <div class="privacy-container">
+        <div class="privacy-card">
+            <div class="badge-privacy"><i class="fas fa-shield-heart"></i> Last revised: April 2025</div>
+            <h2>Our commitment to you</h2>
+            <p>At <strong>Yugen Flora Workshop</strong> ("we", "us", or "our"), we believe that transparency and respect are the roots of any meaningful relationship. Whether you’re signing up for an ikebana workshop, browsing our plant collection, or simply sending us a note, we handle your personal data with the same gentle reverence we give every leaf and blossom. This Privacy Policy explains what information we collect, how we use it, and the choices you have.</p>
+            
+            <h2>1. Information we collect</h2>
+            <p>We collect information to provide better services, nurture our community, and ensure the safety of our digital and physical garden. The types of information include:</p>
+            <ul>
+                <li><span class="highlight-red">📝 Contact details</span> – Name, email address, phone number, and postal address when you fill out forms, register for workshops, or request consultations.</li>
+                <li><span class="highlight-red">🌿 Workshop & inquiry preferences</span> – Your interests (e.g., floral design, garden coaching, events) help us tailor our offerings to your needs.</li>
+                <li><span class="highlight-red">💻 Automatic technical data</span> – IP address, browser type, device information, and how you interact with our website (via anonymized analytics) to improve user experience.</li>
+                <li><span class="highlight-red">🍪 Cookies & similar technologies</span> – We use essential and functional cookies (see our <a href="cookies.html">Cookies Policy</a>). You may manage cookie preferences at any time.</li>
+            </ul>
+            
+            <h2>2. How we use your information</h2>
+            <p>We use the collected data only for legitimate purposes rooted in our mission to cultivate green tranquility and red passion:</p>
+            <ul>
+                <li>✔ Respond to your inquiries, workshop bookings, and customer service requests.</li>
+                <li>✔ Send seasonal garden notes, workshop announcements, or inspiration — but only if you’ve opted in. You can unsubscribe anytime with one click.</li>
+                <li>✔ Improve our website, class offerings, and in-studio experience through aggregated analytics.</li>
+                <li>✔ Protect our community against fraud, security incidents, or legal obligations.</li>
+            </ul>
+            <p>We will never sell, rent, or trade your personal information to third parties for marketing purposes. Your data remains at the heart of our ethical practice.</p>
+
+            <h2>3. Legal basis for processing (GDPR & CCPA alignment)</h2>
+            <p>For individuals in the European Economic Area or California, we process your data based on:</p>
+            <ul>
+                <li><strong>Consent:</strong> when you sign up for newsletters, submit forms, or agree to cookies.</li>
+                <li><strong>Contractual necessity:</strong> to manage workshop registrations or garden consultation services you requested.</li>
+                <li><strong>Legitimate interests:</strong> improving our services, preventing abuse, and communicating essential updates about our business.</li>
+            </ul>
+            <p>You have the right to access, correct, delete, or restrict your personal data. Simply email us at <a href="mailto:privacy@yugenflora.com">privacy@yugenflora.com</a> with your request.</p>
+
+            <h2>4. Data sharing & third parties</h2>
+            <p>We engage trusted service providers to help operate our studio and website, such as email delivery platforms, secure payment processors (for workshop fees), and analytics tools. These partners are contractually bound to protect your information and may only use it for specified purposes. We never share your data with unrelated advertisers or data brokers.</p>
+            <p>In rare circumstances, we may disclose information if required by law or to protect the rights, property, or safety of Yugen Flora Workshop, our attendees, or others.</p>
+
+            <h2>5. Data security & retention</h2>
+            <p>We implement appropriate technical and organizational measures — encryption, secure servers, and limited internal access — to safeguard your information. We retain personal data only as long as necessary to fulfill the purposes outlined in this policy, or as required by tax or legal obligations (e.g., workshop attendance records for 3 years). After that, we securely anonymize or delete your data.</p>
+
+            <h2>6. Children’s privacy</h2>
+            <p>Our workshops and website are intended for adults and families under parental guidance. We do not knowingly collect personal information from children under 13. If a parent or guardian believes we have inadvertently collected such data, please contact us so we can promptly remove it.</p>
+
+            <h2>7. Your privacy choices & rights</h2>
+            <p>You are in control of your personal information. You can:</p>
+            <ul>
+                <li>📧 <strong>Opt out of marketing emails</strong> by clicking the “unsubscribe” link in any newsletter.</li>
+                <li>🍪 <strong>Manage cookie preferences</strong> via our cookie banner or browser settings.</li>
+                <li>🗑️ <strong>Request deletion of your data</strong> — we’ll honor requests unless we have a legal obligation to retain certain records.</li>
+                <li>📋 <strong>Access a copy of your data</strong> in a portable format.</li>
+            </ul>
+            <p>To exercise your rights, contact our Data Steward at <a href="mailto:privacy@yugenflora.com">privacy@yugenflora.com</a> or by mail: Yugen Flora Workshop, Attn: Privacy, 47 Serenity Lane, Portland, OR 97214. We respond within 30 days.</p>
+
+            <h2>8. International data transfers</h2>
+            <p>Our studio is based in the United States. If you are accessing our website from outside the US, please be aware that your information may be transferred to, stored, and processed in the US where our servers are located. By using our services, you consent to such transfers in accordance with this Privacy Policy.</p>
+
+            <h2>9. Updates to this policy</h2>
+            <p>We may update this Privacy Policy occasionally to reflect changes in our practices, technology, or legal requirements. The revised version will be posted on this page with an updated “last revised” date. We encourage you to review it periodically. For significant changes, we may also notify you via email or a prominent notice on our website.</p>
+
+            <div class="last-updated">
+                <i class="fas fa-seedling"></i> This Privacy Policy was last updated on April 24, 2025. If you have any questions or concerns about your privacy, you can also reach our Human & Nature team at <strong>+1 (503) 555-8924</strong> during garden hours.
+            </div>
+        </div>
+
+        <!-- optional: additional reassurance badge / contact card -->
+        <div style="margin-top: 2rem; background: var(--red-soft); border-radius: 28px; padding: 1.5rem; text-align: center;">
+            <i class="fas fa-hand-holding-heart" style="font-size: 2rem; color: var(--red-bright);"></i>
+            <h3 style="color: var(--green-dark); margin: 0.5rem 0;">Your data, our promise</h3>
+            <p style="max-width: 700px; margin: 0 auto;">We don’t just comply with privacy laws — we embrace them as part of our deep respect for every individual who walks through our garden gate. No hidden tracking, no shady sharing.</p>
+            <p style="margin-top: 1rem;"><i class="fas fa-envelope"></i> Questions? Let’s talk: <a href="mailto:privacy@yugenflora.com" style="color: var(--green-dark); font-weight: 600;">privacy@yugenflora.com</a></p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <div>
+            <h4><i class="fas fa-map-marker-alt"></i> Visit Us</h4>
+            <p>Yugen Flora Workshop</p>
+            <p>47 Serenity Lane, Green Valley<br>Portland, OR 97214</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-phone-alt"></i> Call & Grow</h4>
+            <p>+1 (503) 555-8924</p>
+            <p>hello@yugenflora.com</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-clock"></i> Garden Hours</h4>
+            <p>Wed–Sun: 10am – 6pm</p>
+            <p>Workshops by appointment</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Yugen Flora Workshop — Cultivating green tranquility with red passion. All images lovingly curated.</p>
+    </div>
+</footer>
+
+<!-- simple interactive privacy acknowledgment (optional but adds nice user touch) -->
+<script>
+    // Just a small decorative addition: when user clicks on any mailto or policy link, no intrusive actions. 
+    // Ensure external links open with safety. No forced tracking.
+    console.log("Yugen Flora Privacy Page — rooted in transparency.");
+    // Privacy page specific: we could add an optional "last updated" dynamic but already static.
+    // For full consistency, simulate subtle hover effects – no data collection.
+    const privacyCard = document.querySelector('.privacy-card');
+    if(privacyCard) {
+        // simple passive enhancement
+        const highlightLinks = privacyCard.querySelectorAll('a');
+        highlightLinks.forEach(link => {
+            if(link.href && (link.href.includes('mailto:') || link.href.includes('cookies.html') || link.href.includes('terms.html'))) {
+                link.setAttribute('target', '_self'); // keep seamless internal navigation
+            } else if (link.href && !link.href.startsWith(window.location.origin) && link.href.startsWith('http')) {
+                link.setAttribute('rel', 'noopener noreferrer');
+                link.setAttribute('target', '_blank');
+            }
+        });
+    }
+</script>
+</body>
+</html>

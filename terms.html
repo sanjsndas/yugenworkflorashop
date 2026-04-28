@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugen Flora Workshop | Terms & Conditions – Green & Red Agreement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef8f0;
+            color: #1a3a1a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Green & Red Theme */
+        :root {
+            --green-dark: #1e4a1e;
+            --green-medium: #2d6a2d;
+            --green-light: #d0e6d0;
+            --red-bright: #c23b22;
+            --red-deep: #9e2a1c;
+            --red-soft: #fbe9e7;
+            --cream: #fef8f0;
+            --white: #ffffff;
+            --black: #1e1e1e;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: var(--red-bright);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffb4a2;
+        }
+
+        /* terms hero */
+        .terms-hero {
+            background: linear-gradient(135deg, rgba(30,74,30,0.92), rgba(194,59,34,0.85)), url('https://images.unsplash.com/photo-1509316975850-ff9c5f7a5bb6?w=1600');
+            background-size: cover;
+            background-position: center 30%;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+        .terms-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .terms-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* terms content container */
+        .terms-container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .terms-card {
+            background: var(--white);
+            border-radius: 36px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            transition: all 0.2s ease;
+            border-left: 6px solid var(--red-bright);
+        }
+
+        .terms-card h2 {
+            color: var(--green-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .terms-card h2 i {
+            color: var(--red-bright);
+            font-size: 1.6rem;
+        }
+        .terms-card h3 {
+            color: var(--green-medium);
+            margin: 1rem 0 0.5rem;
+            font-size: 1.3rem;
+        }
+        .terms-card p, .terms-card li {
+            color: #2c3e2c;
+            margin-bottom: 0.8rem;
+        }
+        .terms-card ul, .terms-card ol {
+            padding-left: 1.8rem;
+            margin: 1rem 0;
+        }
+        .terms-card li {
+            margin-bottom: 0.4rem;
+        }
+        .terms-card a {
+            color: var(--red-bright);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .terms-card a:hover {
+            color: var(--red-deep);
+        }
+
+        .highlight-box {
+            background: var(--red-soft);
+            padding: 1.6rem;
+            border-radius: 28px;
+            margin: 1.8rem 0;
+            border-left: 4px solid var(--red-bright);
+        }
+        .last-updated {
+            text-align: right;
+            font-style: italic;
+            margin-top: 1rem;
+            color: #5a6e5a;
+            font-size: 0.85rem;
+            border-top: 1px dashed var(--green-light);
+            padding-top: 1rem;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green-dark);
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            background: var(--green-medium);
+            transform: translateX(-5px);
+        }
+
+        /* footer */
+        .footer-contact {
+            background: var(--green-dark);
+            color: white;
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffb4a2;
+        }
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--red-bright);
+        }
+        .copyright {
+            background: var(--green-dark);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #3a6b3a;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .terms-hero h1 {
+                font-size: 2.2rem;
+            }
+            .terms-card {
+                padding: 1.5rem;
+            }
+            .terms-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Yugen <span>Flora</span> Workshop</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="terms-hero">
+        <h1>Terms of Cultivation 🌿</h1>
+        <p>Our agreement with you — rooted in transparency, respect, and the harmony of green & red.</p>
+    </div>
+
+    <div class="terms-container">
+        <div class="terms-card">
+            <h2><i class="fas fa-seedling"></i> 1. Introduction & Acceptance</h2>
+            <p>Welcome to Yugen Flora Workshop (“Yugen Flora”, “we”, “us”, or “our”). By accessing or using our website, signing up for workshops, purchasing products, or visiting our physical garden sanctuary, you agree to be bound by these Terms & Conditions. These terms apply to all visitors, customers, students, and volunteers of Yugen Flora.</p>
+            <p>If you do not agree with any part of these terms, please refrain from using our services. We maintain a space of kindness, ecological integrity, and mutual growth — just like a well-tended garden.</p>
+            <div class="highlight-box">
+                <i class="fas fa-leaf" style="color: var(--green-dark); margin-right: 8px;"></i> <strong>“Green & Red Promise”</strong> — Our workshops, designs, and interactions are founded on respect for nature and each other. Any violation of this ethos may lead to restricted access.
+            </div>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-hand-holding-heart"></i> 2. Workshop & Event Policies</h2>
+            <h3>Registration & Payment</h3>
+            <p>All workshop fees, garden tours, and ikebana intensives must be paid in full at the time of registration unless a deposit option is explicitly stated. We accept credit cards, PayPal, and other methods listed at checkout. Prices are listed in USD and do not include optional supplies unless noted.</p>
+            <h3>Cancellations & Refunds</h3>
+            <ul>
+                <li><strong>By participant:</strong> Cancellations made more than 7 days before the workshop date receive a full refund (minus a 5% processing fee). Cancellations within 3–7 days receive 50% credit toward a future workshop. Cancellations less than 48 hours before the event are non-refundable, but you may transfer your spot to a friend (just notify us!).</li>
+                <li><strong>By Yugen Flora:</strong> If we need to cancel due to extreme weather, instructor illness, or low enrollment, you will receive a full refund or the option to transfer to a future session with a 15% discount code as a thank-you for your flexibility.</li>
+            </ul>
+            <h3>In-Person Garden Etiquette</h3>
+            <p>We ask all guests to respect the plants, stay on designated paths, avoid picking flowers or leaves unless guided by an instructor, and treat fellow attendees with care. We are a scent-sensitive and eco-friendly space — please refrain from strong perfumes or disruptive behavior.</p>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-shopping-bag"></i> 3. Products & E-Commerce Terms</h2>
+            <p>Our online shop (plants, handmade pottery, seeds, curated tools) is available while supplies last. We strive to represent colors and sizes accurately, but due to natural variations in botanicals, slight differences may occur — this is part of the beauty of living art.</p>
+            <ul>
+                <li><strong>Shipping:</strong> We ship live plants only within the continental US during mild weather windows (spring/fall). Substitutions may be needed for plant health; if a specific variety is unavailable, we will contact you. Seeds and dry goods ship worldwide except where restricted.</li>
+                <li><strong>Returns & Exchanges:</strong> If a plant arrives damaged or unhealthy, please send a photo within 48 hours of delivery and we will issue a replacement or store credit. Non-plant items may be returned unopened within 14 days for a refund minus original shipping costs.</li>
+                <li><strong>Pick-up orders:</strong> From our Portland garden, we hold orders for 7 days. Unclaimed orders become donations to our community compost program. </li>
+            </ul>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-laptop-code"></i> 4. Website Use & Intellectual Property</h2>
+            <p>All content on yugenflora.com — including text, graphics, logos, workshop curriculum, photography, and design concepts — is the property of Yugen Flora Workshop or its content creators and is protected by copyright and trademark laws. You may not reproduce, distribute, or commercially exploit any material without prior written permission.</p>
+            <p>You are welcome to share our blog posts or social media content for personal, non-commercial use as long as you credit “Yugen Flora Workshop” with a link back to our site. Any unauthorized scraping or data mining is prohibited.</p>
+            <div class="highlight-box">
+                <i class="fas fa-camera-retro"></i> <strong>Photography & Filming:</strong> We occasionally capture moments during workshops for promotional purposes. By attending, you grant Yugen Flora the right to use such media (unless you notify us in writing beforehand). Your privacy matters — we never share identifiable information without consent.
+            </div>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-shield-alt"></i> 5. Liability & Disclaimer</h2>
+            <p>Gardening and related activities involve inherent risks (soil contact, tools, plants that may cause allergic reactions, etc.). By participating in any workshop, tour, or using our products, you agree to assume all responsibility for your safety. Yugen Flora Workshop is not liable for any injuries, plant-related allergic responses, or property damage that occur on our premises or during events, except in cases of gross negligence.</p>
+            <p>Our advice and workshop content are for educational and inspirational purposes. Plants and gardening results vary depending on climate, care, and individual conditions; we do not guarantee that your garden will mirror our examples.</p>
+            <p><strong>For online purchases:</strong> Our liability is limited to the purchase price of the product. We are not responsible for any consequential damages or losses.</p>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-charging-station"></i> 6. Community Conduct & Digital Etiquette</h2>
+            <p>Yugen Flora values a harassment-free environment for everyone, regardless of age, background, identity, or gardening level. Any form of hate speech, bullying, discrimination, or aggressive behavior will not be tolerated — either in our physical garden, during Zoom workshops, or on our social media channels. Violation may result in immediate removal from events, banning from future registrations, and/or reporting to relevant authorities if necessary.</p>
+            <p>For discussions in our online community spaces (Slack, Discord forums, etc.), we follow a “compost negativity, cultivate compassion” policy. Report any concerns to <a href="mailto:community@yugenflora.com">community@yugenflora.com</a>.</p>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-file-signature"></i> 7. Modifications to Terms & Termination</h2>
+            <p>We may update these Terms & Conditions periodically to reflect changes in our operations, legal requirements, or workshop offerings. The most current version will always be posted on this page, with the “Last Updated” date below. If changes are material, we will notify registered users via email or a website banner.</p>
+            <p>Yugen Flora Workshop reserves the right to suspend or terminate access to any user who violates these terms, engages in fraudulent activity, or disrupts the safe experience of others. You may also delete your account or cancel memberships at any time by contacting us.</p>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-gavel"></i> 8. Governing Law & Dispute Resolution</h2>
+            <p>These Terms shall be governed by and interpreted in accordance with the laws of the State of Oregon, without regard to conflict of law principles. Any dispute arising out of or related to your use of Yugen Flora’s services shall first be attempted to resolve through good-faith negotiation. If unresolved, disputes shall be submitted to binding arbitration in Multnomah County, Oregon, unless otherwise required by law.</p>
+            <p>For small claims or garden-related disagreements, we strongly encourage restorative communication — sit down with us and a cup of herbal tea before legal escalation. We believe in mutual understanding, just like companion planting.</p>
+        </div>
+
+        <div class="terms-card">
+            <h2><i class="fas fa-question-circle"></i> 9. Contact Us — The Root of All Questions</h2>
+            <p>If you have any doubts, feedback, or requests regarding these Terms & Conditions, please reach out. Our small team of plant-loving humans replies within 2–3 business days.</p>
+            <p><strong>Yugen Flora Workshop</strong><br>
+            47 Serenity Lane, Green Valley, Portland, OR 97214<br>
+            Email: <a href="mailto:legal@yugenflora.com">legal@yugenflora.com</a><br>
+            Phone: +1 (503) 555-8924 (weekdays 10am–4pm PT)</p>
+            <a href="about.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Our Story</a>
+            <div class="last-updated">Last updated: April 15, 2025 – Version 2.1 (Green & Red Edition)</div>
+        </div>
+    </div>
+
+    <!-- subtle nature quote banner before footer -->
+    <div style="text-align: center; margin: 1rem auto 2rem; max-width: 800px;">
+        <i class="fas fa-feather-alt" style="color: var(--red-bright); margin-right: 8px;"></i> 
+        <span style="font-style: italic; color: var(--green-dark);">“By using our website or stepping into our garden, you agree to tend this digital soil with kindness — just as you would tend a seedling.”</span>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <div>
+            <h4><i class="fas fa-map-marker-alt"></i> Visit Us</h4>
+            <p>Yugen Flora Workshop</p>
+            <p>47 Serenity Lane, Green Valley<br>Portland, OR 97214</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-phone-alt"></i> Call & Grow</h4>
+            <p>+1 (503) 555-8924</p>
+            <p>hello@yugenflora.com</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-clock"></i> Garden Hours</h4>
+            <p>Wed–Sun: 10am – 6pm</p>
+            <p>Workshops by appointment</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Yugen Flora Workshop — Cultivating green tranquility with red passion. All images lovingly curated.</p>
+    </div>
+</footer>
+</body>
+</html>

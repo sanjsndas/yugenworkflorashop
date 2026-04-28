@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugen Flora Workshop | About Our Green & Red Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef8f0;
+            color: #1a3a1a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Green & Red Theme */
+        :root {
+            --green-dark: #1e4a1e;
+            --green-medium: #2d6a2d;
+            --green-light: #d0e6d0;
+            --red-bright: #c23b22;
+            --red-deep: #9e2a1c;
+            --red-soft: #fbe9e7;
+            --cream: #fef8f0;
+            --white: #ffffff;
+            --black: #1e1e1e;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            color: white;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: var(--red-bright);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffb4a2;
+        }
+
+        /* Page hero (about specific) */
+        .page-hero {
+            background: linear-gradient(135deg, rgba(30,74,30,0.92), rgba(194,59,34,0.85)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600');
+            background-size: cover;
+            background-position: center 40%;
+            padding: 5rem 5%;
+            text-align: center;
+            color: white;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 5%;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--green-dark);
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--red-bright);
+            margin: 0.8rem auto 0;
+        }
+
+        .about-intro {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 32px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+
+        .about-intro p {
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .value-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--red-bright);
+        }
+        .value-card i {
+            font-size: 2.8rem;
+            color: var(--red-bright);
+            margin-bottom: 1rem;
+        }
+        .value-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--green-dark);
+        }
+        .value-card p {
+            color: #2c3e2c;
+        }
+
+        .story-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .story-text {
+            flex: 1.2;
+            min-width: 280px;
+        }
+        .story-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        .story-image {
+            flex: 0.9;
+            min-width: 260px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+        .story-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .story-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .team-member {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .team-member:hover {
+            transform: translateY(-6px);
+        }
+        .team-member img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+        .member-info {
+            padding: 1.5rem;
+        }
+        .member-info h3 {
+            color: var(--green-dark);
+            margin-bottom: 0.3rem;
+        }
+        .member-info .role {
+            color: var(--red-bright);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .member-info p {
+            font-size: 0.95rem;
+        }
+
+        .cta-banner {
+            background: linear-gradient(120deg, var(--green-light) 0%, #f0e2d4 100%);
+            border-radius: 48px;
+            margin: 2rem 5%;
+            padding: 3rem;
+            text-align: center;
+            border-left: 8px solid var(--red-bright);
+        }
+        .cta-banner h2 {
+            font-size: 2rem;
+            color: var(--green-dark);
+        }
+        .btn {
+            display: inline-block;
+            background: var(--red-bright);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: var(--red-deep);
+            transform: scale(1.02);
+        }
+
+        /* footer */
+        .footer-contact {
+            background: var(--green-dark);
+            color: white;
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-contact h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffb4a2;
+        }
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--red-bright);
+        }
+        .copyright {
+            background: var(--green-dark);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid #3a6b3a;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .cta-banner {
+                margin: 2rem 1rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">Yugen <span>Flora</span> Workshop</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms Of Privacy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- About hero section -->
+    <div class="page-hero">
+        <h1>Rooted in Yūgen: Beauty & Impermanence</h1>
+        <p>Where the depth of green meets the vitality of red — a sanctuary for mindful gardeners and nature lovers.</p>
+    </div>
+
+    <!-- Intro / philosophy -->
+    <section>
+        <div class="about-intro">
+            <h2 style="color: var(--green-dark); font-family: 'Playfair Display';">The Yugen Flora Story</h2>
+            <p>Founded in 2018 by botanist and designer Mikaela Rojas, Yugen Flora Workshop emerged from a deep longing to blend Japanese aesthetic principles — the mystery and grace of <strong>“Yūgen”</strong> — with the bold energy of red botanical accents. We believe gardens are living poetry: every leaf whispers patience, every crimson petal speaks of passion.</p>
+            <p>Our Portland-based studio and garden sanctuary has grown into a collective of horticulturists, artists, and eco-educators. We design immersive green spaces that celebrate contrast: deep emerald ferns against fiery Japanese maples, red salvias dancing among silver-green artemisia.</p>
+        </div>
+    </section>
+
+    <!-- Core values (Green & Red symbolism) -->
+    <section style="background: var(--red-soft);">
+        <div class="section-title">Our Guiding Colors</div>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Green · 緑</h3>
+                <p>Growth, resilience, and harmony. Green embodies the earth’s quiet wisdom — from healing herbs to shade-giving canopies. We cultivate sustainable practices, native plants, and soil regeneration.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-heart"></i>
+                <h3>Red · 赤</h3>
+                <p>Energy, courage, and transformation. Red is the heartbeat of the garden: blooming camellias, ripe berries, and dramatic foliage. It reminds us to celebrate bold moments in nature's cycle.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Mindful Cultivation</h3>
+                <p>We teach slow gardening, seasonal observation, and the art of pruning as meditation. Every workshop encourages you to listen — to the soil, the weather, and your own rhythm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our story with image (green & red composition) -->
+    <section>
+        <div class="section-title">The Seed of Inspiration</div>
+        <div class="story-grid">
+            <div class="story-text">
+                <p><strong>Yugen Flora Workshop</strong> began as a small urban plot behind a reclaimed warehouse. Surrounded by concrete, Mikaela planted her first crimson maple and a grove of shade-loving hostas. What started as a personal retreat soon grew into a community hub for everyone craving a connection with living plants.</p>
+                <p>Today, we operate a 1.5-acre educational garden featuring over 200 species of green and red plants — from rare red hellebores to lush moss gardens. We host seasonal festivals, ikebana intensives, and organic gardening courses. Our flagship ‘Crimson & Canopy’ design philosophy has been featured in Pacific Horticulture and Gardenista.</p>
+                <p>We are proud to be a woman-led, BIPOC-friendly space that champions regenerative landscaping and urban biodiversity.</p>
+            </div>
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=800" alt="Yugen founders in garden with red foliage">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team section with green & red natural vibe -->
+    <section style="background: #f5f0e8;">
+        <div class="section-title">Meet the Cultivators</div>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600" alt="Mikaela Rojas">
+                <div class="member-info">
+                    <h3>Mikaela Rojas</h3>
+                    <div class="role">Founder & Head Horticulturist</div>
+                    <p>Master gardener with 15 years of botanical design. Passionate about Japanese gardening techniques and red-leafed varieties.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="David Chen">
+                <div class="member-info">
+                    <h3>David Chen</h3>
+                    <div class="role">Ecology & Soil Lead</div>
+                    <p>Soil whisperer and compost evangelist. David leads our regenerative workshops and native habitat restoration.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600" alt="Elena Park">
+                <div class="member-info">
+                    <h3>Elena Park</h3>
+                    <div class="role">Ikebana & Floral Artistry</div>
+                    <p>Certified Sogetsu teacher. Elena brings red accents and sculptural greens into breathtaking arrangements.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600" alt="Jordan Rivers">
+                <div class="member-info">
+                    <h3>Jordan Rivers</h3>
+                    <div class="role">Workshop Director</div>
+                    <p>Community organizer and garden educator. Jordan designs our seasonal courses and garden immersion programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy statement (Green & Red Manifesto) -->
+    <section>
+        <div class="section-title">Green & Red Manifesto</div>
+        <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 32px; padding: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.03);">
+            <p style="font-size: 1.05rem; font-style: italic; border-left: 4px solid var(--red-bright); padding-left: 1.5rem;">“We don’t just plant gardens — we cultivate relationships. Between chlorophyll and carotene, between calm and courage. In every workshop, we ask: How does this green root anchor you? How does this red bloom ignite you?”</p>
+            <p style="margin-top: 1.2rem;"><strong>Our Promise:</strong> Every design, seed, and lesson is guided by ecological integrity, artistic wonder, and the joy of working with our hands. We use organic fertilizers, avoid synthetic pesticides, and champion climate-appropriate plants. The red thread that runs through all our work: inclusivity, beauty, and resilience.</p>
+        </div>
+    </section>
+
+    <!-- Impact & community stats -->
+    <section style="background: linear-gradient(145deg, var(--green-light) 0%, #e6f0e6 100%);">
+        <div class="section-title">Our Community Impact</div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; text-align: center;">
+            <div style="background: white; border-radius: 40px; padding: 1.8rem; min-width: 160px;">
+                <i class="fas fa-tree" style="font-size: 2.4rem; color: var(--green-medium);"></i>
+                <h3 style="font-size: 2rem; color: var(--green-dark);">1,200+</h3>
+                <p>Trees & shrubs planted</p>
+            </div>
+            <div style="background: white; border-radius: 40px; padding: 1.8rem; min-width: 160px;">
+                <i class="fas fa-users" style="font-size: 2.4rem; color: var(--red-bright);"></i>
+                <h3 style="font-size: 2rem; color: var(--green-dark);">3,500+</h3>
+                <p>Workshop attendees</p>
+            </div>
+            <div style="background: white; border-radius: 40px; padding: 1.8rem; min-width: 160px;">
+                <i class="fas fa-hand-sparkles" style="font-size: 2.4rem; color: var(--green-medium);"></i>
+                <h3 style="font-size: 2rem; color: var(--green-dark);">18</h3>
+                <p>Community gardens supported</p>
+            </div>
+            <div style="background: white; border-radius: 40px; padding: 1.8rem; min-width: 160px;">
+                <i class="fas fa-feather-alt" style="font-size: 2.4rem; color: var(--red-bright);"></i>
+                <h3 style="font-size: 2rem; color: var(--green-dark);">100%</h3>
+                <p>Organic & peat-free promise</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to action: join workshops or visit -->
+    <div class="cta-banner">
+        <h2>Come Grow With Us 🌱❤️</h2>
+        <p style="max-width: 600px; margin: 0.8rem auto;">Whether you're a beginner with a tiny balcony or a landscape designer, our green-red community welcomes you. Explore workshops, volunteer days, or simply wander the gardens.</p>
+        <a href="#" class="btn">Discover Workshops →</a>
+        <a href="#" style="display: inline-block; margin-left: 1rem; background: transparent; border: 2px solid var(--green-dark); color: var(--green-dark);" class="btn">Visit the Garden</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-contact">
+        <div>
+            <h4><i class="fas fa-map-marker-alt"></i> Visit Us</h4>
+            <p>Yugen Flora Workshop</p>
+            <p>47 Serenity Lane, Green Valley<br>Portland, OR 97214</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-phone-alt"></i> Call & Grow</h4>
+            <p>+1 (503) 555-8924</p>
+            <p>hello@yugenflora.com</p>
+        </div>
+        <div>
+            <h4><i class="fas fa-clock"></i> Garden Hours</h4>
+            <p>Wed–Sun: 10am – 6pm</p>
+            <p>Workshops by appointment</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2025 Yugen Flora Workshop — Cultivating green tranquility with red passion. All images lovingly curated.</p>
+    </div>
+</footer>
+</body>
+</html>
